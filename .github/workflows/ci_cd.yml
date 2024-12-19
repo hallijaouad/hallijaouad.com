@@ -1,0 +1,43 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+      - main  # ou la branche de votre choix
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.*'  # ou la version de Node.js que vous utilisez
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the Angular app
+        run: npm run build
+
+      - name: Print environment variables
+        run: |
+          echo "SERVER_IP: ${{ secrets.SERVER_IP }}"
+          echo "USERNAME:  ${{ secrets.SERVER_USERNAME }}"
+
+      - name: Deploy to VPS
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          USERNAME: ${{ secrets.SERVER_USERNAME }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > id_rsa
+          chmod 600 id_rsa
+          # Utilisation de rsync pour transférer les fichiers de build
+          rsync -avz -e "ssh -i id_rsa -o StrictHostKeyChecking=no -p 22" --exclude '.github' --exclude 'node_modules' --exclude '.git' ./dist/* $USERNAME@$SERVER_IP:/var/www/vhosts/hallijaouad.com/httpdocs
+          # Redémarrer le serveur ou le service si nécessaire
+          ssh -p 22 -i id_rsa -o StrictHostKeyChecking=no $USERNAME@$SERVER_IP "cd /var/www/vhosts/hallijaouad.com/httpdocs && pm2 restart all"
