@@ -41,10 +41,18 @@ app.use(
  * Handle all other requests by rendering the Angular application.
  */
 app.use('/**', (req, res, next) => {
-  angularApp
+    console.log(req);
+    angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
+    .then((response) => {
+        if (response) {
+            console.log('Réponse Angular trouvée:', response);
+            writeResponseToNodeResponse(response, res);
+        } else {
+            console.log('Aucune réponse Angular, passer au middleware suivant.');
+            next();
+        }
+        }
     )
     .catch(next);
 });
