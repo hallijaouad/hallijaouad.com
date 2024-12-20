@@ -41,7 +41,12 @@ app.use(
  * Handle all other requests by rendering the Angular application.
  */
 app.use('/**', (req, res, next) => {
-    console.log(req);
+    // Log de la requête complète
+    console.log('--- Nouvelle Requête ---');
+    console.log(`Méthode: ${req.method}`);
+    console.log(`URL: ${req.originalUrl}`);
+    console.log('Headers:', req.headers);
+    console.log('Body:', req.body);
     angularApp
     .handle(req)
     .then((response) => {
