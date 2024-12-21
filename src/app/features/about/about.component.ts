@@ -8,7 +8,7 @@ import { SkillBadgeComponent } from '../../shared/components/skill-badge/skill-b
   standalone: true,
   imports: [SectionContainerComponent, SectionTitleComponent, SkillBadgeComponent],
   template: `
-    <app-section-container class="py-16">
+    <app-section-container>
       <app-section-title 
         title="À propos de moi" 
         subtitle="Découvrez mon parcours et mes compétences"
