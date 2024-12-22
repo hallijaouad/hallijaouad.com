@@ -43,6 +43,10 @@ export class Data {
                     label: 'Angular',
                 },
                 {
+                    index:1,
+                    label: 'NestJS',
+                },
+                {
                     index:3,
                     label: 'TailwindCSS',
                 }
