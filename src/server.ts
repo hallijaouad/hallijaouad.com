@@ -42,16 +42,16 @@ app.use(
  */
 app.use('/**', (req, res, next) => {
     // Log de la requête complète
-    console.log('--- Nouvelle Requête ---');
-    console.log(`Méthode: ${req.method}`);
-    console.log(`URL: ${req.originalUrl}`);
-    console.log('Headers:', req.headers);
-    console.log('Body:', req.body);
+   // console.log('--- Nouvelle Requête ---');
+   // console.log(`Méthode: ${req.method}`);
+   // console.log(`URL: ${req.originalUrl}`);
+   // console.log('Headers:', req.headers);
+   // console.log('Body:', req.body);
     angularApp
     .handle(req)
     .then((response) => {
         if (response) {
-            console.log('Réponse Angular trouvée:', response);
+            console.log('Réponse Angular trouvée');
             writeResponseToNodeResponse(response, res);
         } else {
             console.log('Aucune réponse Angular, passer au middleware suivant.');

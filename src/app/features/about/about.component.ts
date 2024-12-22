@@ -14,14 +14,14 @@ import { SkillBadgeComponent } from '../../shared/components/skill-badge/skill-b
         subtitle="Découvrez mon parcours et mes compétences"
       />
       
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid md:grid-cols-2 gap-24">
         <div>
           <h3 class="text-2xl font-semibold mb-4">Mon Parcours</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Fort de plusieurs années d'expérience dans le développement web, je me spécialise dans la création d'applications modernes, performantes et sécurisées. Ma passion pour les nouvelles technologies me pousse à constamment me former et à adopter les meilleures pratiques du secteur.
+          </p>
           <p class="text-gray-600 dark:text-gray-300 mb-6">
-            Fort de plusieurs années d'expérience dans le développement web, je me spécialise 
-            dans la création d'applications modernes et performantes. Ma passion pour les 
-            nouvelles technologies me pousse à constamment me former et à adopter les 
-            meilleures pratiques du secteur.
+            Expert en Angular, NestJS, Node.js et architecture cloud, je conçois des solutions robustes et innovantes. Mon objectif est d’allier fiabilité et performance pour répondre aux besoins numériques des entreprises avec engagement et excellence.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">Philosophie de développement</h3>

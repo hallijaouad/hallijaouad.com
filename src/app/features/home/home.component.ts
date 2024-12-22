@@ -7,12 +7,12 @@ import {SectionContainerComponent} from '../../shared/components/section-contain
     standalone: true,
     imports: [RouterLink, SectionContainerComponent],
     template: `
-        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 h-full">
+        <div class="h-full">
             <app-section-container>
                 <div class="grid grid-flow-row-dense md:grid-cols-3 ms:grid-cols-2 gap-12 items-center">
                     <div class="col-span-2">
                         <h1 class="text-4xl md:text-4xl font-bold mb-12">
-                            Jaouad Halli
+                            Jaouad HALLI
                             <span class="block text-primary-600 mt-2">Ingénieur Développeur</span>
                         </h1>
                         <div class="text-gray-600 dark:text-gray-300 mb-12">
@@ -30,13 +30,13 @@ import {SectionContainerComponent} from '../../shared/components/section-contain
                                 collaboration agile, en appliquant les meilleures pratiques de développement.
                             </p>
                         </div>
-                        <a routerLink="/about" class="btn-primary">En savoir plus</a>
+                        <a routerLink="/about" class="text-primary-700 underline">En savoir plus</a>
                     </div>
                     <div class="relative flex justify-center">
                         <div class="flex items-center bg-white justify-center aspect-square rounded-full overflow-hidden shadow-xl w-4/6 h-4/6">
                             <img
                                     src="profile/profile.png"
-                                    alt="Jaouad Halli"
+                                    alt="Jaouad HALLI"
                                     class="object-cover"
                             >
 
