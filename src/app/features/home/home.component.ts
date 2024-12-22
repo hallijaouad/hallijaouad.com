@@ -13,7 +13,7 @@ import {SectionContainerComponent} from '../../shared/components/section-contain
                     <div class="col-span-2">
                         <h1 class="text-4xl md:text-4xl font-bold mb-12">
                             Jaouad HALLI
-                            <span class="block text-primary-600 mt-2">Ingénieur Développeur</span>
+                            <span class="block text-primary-600 mt-2" data-test-id="page_home_title">Ingénieur Développeur</span>
                         </h1>
                         <div class="text-gray-600 dark:text-gray-300 mb-12">
                             <p class="mb-4">
@@ -30,7 +30,7 @@ import {SectionContainerComponent} from '../../shared/components/section-contain
                                 collaboration agile, en appliquant les meilleures pratiques de développement.
                             </p>
                         </div>
-                        <a routerLink="/about" class="text-primary-700 underline">En savoir plus</a>
+                        <a routerLink="/about" class="text-primary-700 underline" data-test-id="page_home_link_plus">En savoir plus</a>
                     </div>
                     <div class="relative flex justify-center">
                         <div class="flex items-center bg-white justify-center aspect-square rounded-full overflow-hidden shadow-xl w-4/6 h-4/6">
@@ -38,6 +38,7 @@ import {SectionContainerComponent} from '../../shared/components/section-contain
                                     src="profile/profile.png"
                                     alt="Jaouad HALLI"
                                     class="object-cover"
+                                    data-test-id="page_home_img_profile"
                             >
 
                         </div>

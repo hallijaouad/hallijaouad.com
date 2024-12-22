@@ -1,0 +1,47 @@
+<app-section-container role="region" aria-labelledby="section_title_about_me">
+    <app-section-title
+            title="À propos de moi"
+            subtitle="Découvrez mon parcours et mes compétences"
+            section_id="section_title_about_me"
+    ></app-section-title>
+
+    <div class="grid md:grid-cols-2 gap-24">
+        <div>
+            <h3 class="text-2xl font-semibold mb-4" data-test-id="section_title_parcours" id="section_title_parcours" role="heading" aria-level="2">Mon Parcours</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4" data-test-id="section_parcours_description_1" aria-describedby="section_title_parcours">
+                Fort de plusieurs années d'expérience dans le développement web, je me spécialise dans la création d'applications modernes, performantes et sécurisées.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300 mb-6" data-test-id="section_parcours_description_2" aria-describedby="section_title_parcours">
+                Expert en Angular, NestJS, Node.js et architecture cloud, je conçois des solutions robustes et innovantes.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4" data-test-id="section_title_philosophie" id="section_title_philosophie" role="heading" aria-level="2">Philosophie de développement</h3>
+            <ul class="space-y-4 text-gray-600 dark:text-gray-300" data-test-id="section_philosophie_list" aria-labelledby="section_title_philosophie">
+                <li data-test-id="philosophie_item_1">• Code propre et maintenable</li>
+                <li data-test-id="philosophie_item_2">• Tests automatisés</li>
+                <li data-test-id="philosophie_item_3">• Performance et optimisation</li>
+                <li data-test-id="philosophie_item_4">• Expérience utilisateur au centre des décisions</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-2xl font-semibold mb-4" data-test-id="section_title_competences" id="section_title_competences" role="heading" aria-level="2">Compétences techniques</h3>
+            <div class="space-y-6" data-test-id="section_competences" aria-labelledby="section_title_competences">
+                @for(group of Data.competances; track $index){
+                    <div>
+                        @let groupNameKey = getName(group.group_name);
+                        <h4 class="text-lg font-medium mb-3" [attr.data-test-id]="'competences_title_'+groupNameKey" [attr.id]="'competences_title_'+groupNameKey" role="heading" aria-level="3">{{ group.group_name }}</h4>
+                        <div class="flex flex-wrap gap-2" [attr.data-test-id]="'competences_list_'+groupNameKey" [attr.aria-labelledby]="'competences_title_'+groupNameKey">
+                            @for(item of group.items;track  $index){
+                                <app-skill-badge
+                                        name="{{item.label}}"
+                                        skillId="skill_{{item.label}}">
+                                </app-skill-badge>
+                            }
+                        </div>
+                    </div>
+                }
+        </div>
+    </div>
+    </div>
+</app-section-container>

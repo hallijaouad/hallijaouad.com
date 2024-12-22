@@ -9,15 +9,16 @@ import {Menu} from "../../constants/menu";
     imports: [RouterLink],
     template: `
         <header class="fixed w-full bg-gray-800 dark:bg-gray-900 shadow-md z-50">
-            <nav class="section-container flex items-center justify-between h-16">
-                <a routerLink="/" class="text-xl font-bold text-white">Jaouad HALLI</a>
-                <div class="flex gap-6">
+            <nav class="section-container flex items-center justify-between h-16" data-test-id="navbar">
+                <a routerLink="/" class="text-xl font-bold text-white" data-test-id="navbar_title">Jaouad HALLI</a>
+                <div class="flex gap-6" data-test-id="navbar_menu">
                     @for (item of menuItems; track item.index) {
-                        <a 
+                        <a
                                 routerLink="{{ item.route }}"
-                                class="text-white hover:text-white {{itemOpacity}}"
+                                class="text-white hover:text-white"
                                 [class.opacity-100]="isActive(item.route)"
                                 [class.opacity-65]="!isActive(item.route)"
+                                [attr.data-test-id]="'navbar_item_'+item.index"
                         >{{ item.label }}</a>
                     }
                 </div>
@@ -34,11 +35,13 @@ export class HeaderComponent {
     itemOpacity: string = 'opacity-65';
     // Signal pour obtenir le menu actif
     activeMenuItem = computed(() => this.menuService.getActiveMenuItem());
+
     constructor() {
-        if(!this.activeMenuItem()) {
+        if (!this.activeMenuItem()) {
             this.menuService.setActiveMenuItem('/home')
         }
     }
+
     /**
      * Vérifie si un élément est actif
      */
