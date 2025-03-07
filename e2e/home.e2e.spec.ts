@@ -11,7 +11,7 @@ test.describe('Home Page', () => {
         const pageSubtitle = await page.locator('[data-test-id="page_home_title"]');
 
         await expect(pageTitle).toHaveText(/Jaouad HALLI/);
-        await expect(pageSubtitle).toHaveText('Ingénieur Développeur');
+        await expect(pageSubtitle).toHaveText('Tech leader');
     });
 
     test('should display the description paragraphs', async ({ page }) => {

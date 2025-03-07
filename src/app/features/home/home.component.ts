@@ -13,7 +13,7 @@ import {SectionContainerComponent} from '../../shared/components/section-contain
                     <div class="col-span-2">
                         <h1 class="text-4xl md:text-4xl font-bold mb-12">
                             Jaouad HALLI
-                            <span class="block text-primary-600 mt-2" data-test-id="page_home_title">Ingénieur Développeur</span>
+                            <span class="block text-primary-600 mt-2" data-test-id="page_home_title">Tech leader</span>
                         </h1>
                         <div class="text-gray-600 dark:text-gray-300 mb-12">
                             <p class="mb-4">

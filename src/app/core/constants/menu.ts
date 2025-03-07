@@ -13,6 +13,11 @@ export class Menu {
             route: '/about'
         },
         {
+            index:4,
+            label: 'Portfolio',
+            route: '/portfolio'
+        },
+        {
             index:3,
             label: 'Contact',
             route: '/contact'
